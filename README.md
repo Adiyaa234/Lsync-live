@@ -3,15 +3,16 @@ lsync live sync
 
 ### Step 1 
 
-    install lsyncd
+    sudo apt-get install lsyncd
   
 ### Step 2
 
-    mkdir /etc/lsyncd/lsyncd.conf.lua
+    sudo mkdir /etc/lsyncd
+    sudo mkdir /var/log/lsyncd
   
 ### Step 3
     sudo nano /etc/lsyncd/lsyncd.conf.lua
-  
+      
   
 ### Step 4
 
@@ -29,8 +30,14 @@ lsync live sync
           delay = 10,
     }
   
-### Step 5 Root deer hiigdeh
-  
+### Step 5 
+
+    sudo systemctl start lsyncd
+    sudo systemctl enable lsyncd
+    sudo systemctl restart lsyncd
+    systemctl status lsyncd
+    
+### Step 6 Root deer hiigdeh
     sudo ssh-keygen -t rsa
     ssh user@IP
     login once

@@ -30,28 +30,24 @@ lsync live sync
           delay = 10,
     }
   
-### Step 5 
 
-    sudo systemctl start lsyncd
-    sudo systemctl enable lsyncd
-    sudo systemctl restart lsyncd
-    systemctl status lsyncd
     
-### Step 6 Root deer hiigdeh
+### Step 5 Root deer hiigdeh
     sudo ssh-keygen -t rsa
     ssh user@IP
     login once
   
     sudo systemctl restart lsyncd
 
-### Step 6 To tail log
-
-    sudo nano ~/.ssh/authorized_keys
-    
-
-### Step 7 Copy The Root rsa key into authorized_keys file in Destination
+### Step 6 Copy The Root rsa key into authorized_keys file in Destination
 
     Confirm the permission as 600 and 700 chmod
     tail -f /var/log/lsyncd/lsyncd.log
     cat /var/log/lsyncd/lsyncd.log
-  
+
+### Step 7 Source Deer
+
+    sudo systemctl start lsyncd
+    sudo systemctl enable lsyncd
+    sudo systemctl restart lsyncd
+    systemctl status lsyncd
